@@ -11,6 +11,14 @@
   RTPPeriodicBang::RTPPeriodicBang(unsigned int figurePeriod){
     _figurePeriod = figurePeriod;
     _millisPast = millis();
+    _iddleCounter = 0;
+  }
+
+  RTPPeriodicBang::RTPPeriodicBang(unsigned int figurePeriod, int iddleCounter){
+    _figurePeriod = figurePeriod;
+    _millisPast = millis();
+    _iddleCounter = iddleCounter;
+    _iddleCounterCurrent = _iddleCounter;
   }
 
   void RTPPeriodicBang::setFigurePeriod(unsigned int figurePeriod){
@@ -26,4 +34,17 @@
       (*f)("BANG");
       _millisPast=millis();
     }
-  }
+}
+
+  void RTPPeriodicBang::callbackIddleCounter( void (*f)(String) ){
+    if( millis() >= (_millisPast + _figurePeriod) ){
+      _iddleCounterCurrent--;
+      _millisPast=millis();
+      Serial.print("TICK: left# ");
+      Serial.println(_iddleCounterCurrent);
+    }
+    if(_iddleCounterCurrent < 1) (*f)("IDDLE EXPIRED");
+}
+	void RTPPeriodicBang::resetIddleCounter(){
+		_iddleCounterCurrent = _iddleCounter;
+	}

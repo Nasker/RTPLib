@@ -58,6 +58,8 @@ RTPPeriodicBang	KEYWORD1
 setFigurePeriod	KEYWORD2
 getFigurePeriod	KEYWORD2
 callbackPeriodBang	KEYWORD2
+callbackIddleCounter	KEYWORD2
+resetIddleCounter	KEYWORD2
 
 RTPSmartRange	KEYWORD1
 setNumberZones	KEYWORD2
@@ -151,3 +153,10 @@ CLICKBTN_PULLUP	KEYWORD3
 RTPRotaryClick	KEYWORD1
 callbackOnRotation	KEYWORD2
 RTPRotary	KEYWORD1
+
+RTPBatteryControl	KEYWORD1
+setBatteryLowLevelThreshold	KEYWORD2
+setPowerSupplyThreshold	KEYWORD2
+monitorBatteryCallbacks	KEYWORD2
+getVoltageLevel	KEYWORD2
+calcVoltageLevel	KEYWORD2

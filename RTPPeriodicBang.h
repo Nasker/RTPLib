@@ -11,12 +11,17 @@
 class RTPPeriodicBang{
 	unsigned int _figurePeriod;
 	unsigned long _millisPast;
+	int _iddleCounter;
+	int _iddleCounterCurrent;
 	
 	public:
 		RTPPeriodicBang(unsigned figurePeriod);
+		RTPPeriodicBang(unsigned int figurePeriod, int iddleCounter);
 		void setFigurePeriod(unsigned int figurePeriod);
 		int getFigurePeriod();
 		void callbackPeriodBang( void (*f)(String) );
+		void callbackIddleCounter( void (*f)(String) );
+		void resetIddleCounter();
 };
 
 #endif

@@ -8,7 +8,7 @@
 
 #include "Arduino.h"
 
-const byte _numReadings = 5;
+const int _numReadings = 1000;
 
 class RTPSmooth{
 int _readings[_numReadings]; 
