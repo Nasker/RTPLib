@@ -20,7 +20,7 @@ class RTPPeriodicBang{
 		void setFigurePeriod(unsigned int figurePeriod);
 		int getFigurePeriod();
 		void callbackPeriodBang( void (*f)(String) );
-		void callbackIddleCounter( void (*f)(String) );
+		void callbackIddleCounter( void (*f)(String, int) );
 		void resetIddleCounter();
 };
 

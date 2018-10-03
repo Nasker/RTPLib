@@ -160,3 +160,13 @@ setPowerSupplyThreshold	KEYWORD2
 monitorBatteryCallbacks	KEYWORD2
 getVoltageLevel	KEYWORD2
 calcVoltageLevel	KEYWORD2
+
+
+RTPPsyPixel	KEYWORD1
+beginStrip	KEYWORD2
+psyColorStrip	KEYWORD2
+blackenStrip	KEYWORD2
+redStrip	KEYWORD2
+greenStrip	KEYWORD2
+blueStrip	KEYWORD2
+whiteStrip	KEYWORD2

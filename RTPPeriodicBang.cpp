@@ -36,14 +36,13 @@
     }
 }
 
-  void RTPPeriodicBang::callbackIddleCounter( void (*f)(String) ){
+  void RTPPeriodicBang::callbackIddleCounter( void (*f)(String,int) ){
     if( millis() >= (_millisPast + _figurePeriod) ){
       _iddleCounterCurrent--;
       _millisPast=millis();
-      Serial.print("TICK: left# ");
-      Serial.println(_iddleCounterCurrent);
+      (*f)("TICK",_iddleCounterCurrent);
     }
-    if(_iddleCounterCurrent < 1) (*f)("IDDLE EXPIRED");
+    if(_iddleCounterCurrent < 1) (*f)("IDDLE EXPIRED",_iddleCounterCurrent);
 }
 	void RTPPeriodicBang::resetIddleCounter(){
 		_iddleCounterCurrent = _iddleCounter;
