@@ -170,3 +170,8 @@ redStrip	KEYWORD2
 greenStrip	KEYWORD2
 blueStrip	KEYWORD2
 whiteStrip	KEYWORD2
+
+RTPRelay	KEYWORD1
+isCoilActive	KEYWORD2
+setState	KEYWORD2
+switchState	KEYWORD2
