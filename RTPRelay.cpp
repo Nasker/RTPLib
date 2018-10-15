@@ -11,6 +11,7 @@
 RTPRelay::RTPRelay(byte relayOutputPin){
   _relayOutputPin = relayOutputPin;
   _state = false;
+  pinMode(_relayOutputPin, OUTPUT);
   write();
 }
 
