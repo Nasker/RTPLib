@@ -175,3 +175,10 @@ RTPRelay	KEYWORD1
 isCoilActive	KEYWORD2
 setState	KEYWORD2
 switchState	KEYWORD2
+
+RTPPhotoDiodeTrigger	KEYWORD1
+callibrate	KEYWORD2
+setThreshold	KEYWORD2
+setCountGuard	KEYWORD2
+readnShoot	KEYWORD2	
+overThreshold	KEYWORD2
