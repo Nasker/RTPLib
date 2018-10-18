@@ -3,7 +3,6 @@
   Created by Oscar Martínez Carmona @ RockinTechProjects, October 2, 2018.
 */
 
-
 #include "Arduino.h"
 #include "RTPBatteryControl.h"
 #include <RTPSmooth.h>
@@ -11,7 +10,7 @@
 
 RTPBatteryControl::RTPBatteryControl(int batteryLevelInputPin, int adcLevels){
 	_batteryLevelInputPin = batteryLevelInputPin;
-  _batteryLowLevelThreshold = 3.0;
+  _batteryLowLevelThreshold = 3.3;
   _powerSupplyThreshold = 4.0;
   _adcLevels = adcLevels;
 }
@@ -26,7 +25,6 @@ void RTPBatteryControl::setPowerSupplyThreshold(float powerSupplyThreshold){
 
 void RTPBatteryControl::monitorBatteryCallbacks(void (*f)(String,float)){
   _vccRead = calcVoltageLevel();
-
   if(_vccRead > _powerSupplyThreshold) _vccExternalSource = true;  
   else _vccExternalSource = false;
   
@@ -39,7 +37,6 @@ void RTPBatteryControl::monitorBatteryCallbacks(void (*f)(String,float)){
     }
     _prevLevelState = _vccExternalSource;
   }
-
   if(_vccRead < _batteryLowLevelThreshold) _lowBattery = true;  
   else _lowBattery = false;
   
@@ -49,7 +46,6 @@ void RTPBatteryControl::monitorBatteryCallbacks(void (*f)(String,float)){
     }
     _prevBatteryState = _lowBattery;
   }
-
 }
 
 float RTPBatteryControl::calcVoltageLevel(){
@@ -61,7 +57,6 @@ float RTPBatteryControl::getVoltageLevel(){
   return calcVoltageLevel();
 }
 
-
-
-
-
+float RTPBatteryControl::getVoltageLevelFast(){
+  return  ( analogRead(_batteryLevelInputPin) * (3.3 / float(_adcLevels) )) * 2;
+}

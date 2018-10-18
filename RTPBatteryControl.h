@@ -27,6 +27,7 @@ class RTPBatteryControl{
 		void setPowerSupplyThreshold(float powerSupplyThreshold);
 		void monitorBatteryCallbacks(void (*f)(String,float));
 		float getVoltageLevel();
+		float getVoltageLevelFast();
 
 	private:
 		float calcVoltageLevel();
