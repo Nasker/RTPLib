@@ -60,3 +60,13 @@ float RTPBatteryControl::getVoltageLevel(){
 float RTPBatteryControl::getVoltageLevelFast(){
   return  ( analogRead(_batteryLevelInputPin) * (3.3 / float(_adcLevels) )) * 2;
 }
+
+float RTPBatteryControl::getHueLevel(){
+  float volts = getVoltageLevelFast();
+  float voltageHue = constrain(map(round( volts * 100), 300, 400, 0, 120), 0, 120);
+  Serial.print("Measured volts are: ");
+  Serial.print(volts);
+  Serial.print("\t Battery hue is: ");
+  Serial.println(voltageHue);
+  return voltageHue;
+}

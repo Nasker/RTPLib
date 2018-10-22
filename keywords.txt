@@ -161,6 +161,7 @@ monitorBatteryCallbacks	KEYWORD2
 getVoltageLevel	KEYWORD2
 getVoltageLevelFast	KEYWORD2
 calcVoltageLevel	KEYWORD2
+getHueLevel	KEYWORD2
 
 RTPPsyPixel	KEYWORD1
 beginStrip	KEYWORD2

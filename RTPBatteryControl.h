@@ -28,6 +28,7 @@ class RTPBatteryControl{
 		void monitorBatteryCallbacks(void (*f)(String,float));
 		float getVoltageLevel();
 		float getVoltageLevelFast();
+		float getHueLevel();
 
 	private:
 		float calcVoltageLevel();
