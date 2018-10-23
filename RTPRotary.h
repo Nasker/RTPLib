@@ -16,7 +16,7 @@ class RTPRotary: public Encoder{
     RTPRotary(int ID, int leftRotPin, int rightRotPin):Encoder(leftRotPin,rightRotPin){
     	_ID = ID;
     };
-    void callbackOnRotation( void (*userFunc)(int,String,int) );
+    void callbackOnRotation( void (*userFunc)(int,String,int,int) );
   };
 
 #endif

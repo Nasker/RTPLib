@@ -7,14 +7,14 @@
 #include "Arduino.h"
 #include "RTPRotary.h"
 
-void RTPRotary::callbackOnRotation( void (*userFunc)(int,String,int) ){
+void RTPRotary::callbackOnRotation( void (*userFunc)(int,String,int,int) ){
 	long newPosition = read()/4;
   	if (newPosition < _oldPosition) {
    		_oldPosition = newPosition;
-   		(*userFunc)(_ID,"ROTATING LEFT",newPosition);
+   		(*userFunc)(_ID,"LEFT",-1,newPosition);
   	}
   	else if (newPosition > _oldPosition) {
    		_oldPosition = newPosition;
-   		(*userFunc)(_ID,"ROTATING RIGHT",newPosition);
+   		(*userFunc)(_ID,"RIGHT",1,newPosition);
   	}
 }
