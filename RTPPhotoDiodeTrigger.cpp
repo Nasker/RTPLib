@@ -7,7 +7,8 @@
 #include "RTPPhotoDiodeTrigger.h"
 
 
-RTPPhotoDiodeTrigger::RTPPhotoDiodeTrigger(int photoInput){
+RTPPhotoDiodeTrigger::RTPPhotoDiodeTrigger(int ID, int photoInput){
+	_ID = ID;
 	_photoInput = photoInput;
   	_countGuard=0;
   	_shootGuard=false;
@@ -39,7 +40,7 @@ void RTPPhotoDiodeTrigger::setCountGuard(int countGuardCycles){
 	_coundGuardCycles = countGuardCycles;
 }
 
-void RTPPhotoDiodeTrigger::readnShoot(void (*f)(String)){
+void RTPPhotoDiodeTrigger::readnShoot(void (*f)(int, String)){
   _photoRead = analogRead(_photoInput);
   if(_shootGuard) _countGuard++;
 
@@ -57,12 +58,12 @@ void RTPPhotoDiodeTrigger::readnShoot(void (*f)(String)){
   
   if(_state != _prevState){
     if((_state)&&(!_shootGuard)){
-      (*f)("ON");
+      (*f)(_ID,"ON");
       _shootGuard=true;
       _countGuard=0;
     }
     if(!_state){
-      (*f)("OFF");
+      (*f)(_ID,"OFF");
     }
     _prevState = _state;
   }

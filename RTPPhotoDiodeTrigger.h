@@ -9,8 +9,8 @@
 #include "Arduino.h"
 
 class RTPPhotoDiodeTrigger{
+	int _ID;
 	int _photoInput;
-
 	int _photoRead;
 	bool _state;
 	bool _prevState;
@@ -23,11 +23,11 @@ class RTPPhotoDiodeTrigger{
 	
 	
 	public:
-		RTPPhotoDiodeTrigger(int photoInput);
+		RTPPhotoDiodeTrigger(int ID, int photoInput);
 		void callibrate(int threshold);
 		void setThreshold(int threshold);
 		void setCountGuard(int countGuardCycles);
-		void readnShoot(void (*f)(String));
+		void readnShoot(void (*f)(int,String));
 		bool overThreshold();
 };
 
