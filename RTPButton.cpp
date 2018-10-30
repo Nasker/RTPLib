@@ -23,6 +23,22 @@ RTPButton::RTPButton(byte buttonInput, int mode){
   }
 }
 
+RTPButton::RTPButton(byte ID, byte buttonInput, int mode){
+  _ID = ID;				
+  _buttonInput = buttonInput;
+  _coundGuardCycles = 500;;
+  _countGuard = 0;
+  _holdCounter = 0;
+  _prevState = digitalRead(_buttonInput);
+  _mode = mode;
+  if(mode == NORMAL){
+  	pinMode(buttonInput,INPUT);
+  }
+  if(mode == PULLUP){
+  	pinMode(buttonInput,INPUT_PULLUP);
+  }
+}
+
 
 void RTPButton::read(){
 	  if(_mode) _state = !digitalRead(_buttonInput);
@@ -60,7 +76,7 @@ void RTPButton::callbackDeClick(void (*f)(String)){
   _prevState=_state;
 }
 
-void RTPButton::callback(void (*f)(String)){
+void RTPButton::callback(void (*f)(int,String)){
   if(_shootGuard) _countGuard++;
 
   if(_countGuard >= _coundGuardCycles){
@@ -72,13 +88,13 @@ void RTPButton::callback(void (*f)(String)){
   if(_state != _prevState){
     if(_state && !_shootGuard){
       //Serial.println("CLICK");
-      (*f)("CLICK");
+      (*f)(_ID,"CLICK");
       _shootGuard=true;
       _countGuard=0;
     }
     if(!_state){
       //Serial.println("CLICK");
-      (*f)("DECLICK");
+      (*f)(_ID,"DECLICK");
     }
   }
   _prevState=_state;

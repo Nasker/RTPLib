@@ -69,6 +69,11 @@ void RTPPhotoDiodeTrigger::readnShoot(void (*f)(int, String)){
   }
 }
 
+void RTPPhotoDiodeTrigger::printReading(){
+	Serial.print(_photoRead);
+	Serial.print("\t");
+}
+
 bool RTPPhotoDiodeTrigger::overThreshold(){
 	return _state;
 }

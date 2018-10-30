@@ -183,3 +183,4 @@ setThreshold	KEYWORD2
 setCountGuard	KEYWORD2
 readnShoot	KEYWORD2	
 overThreshold	KEYWORD2
+printReading	KEYWORD2

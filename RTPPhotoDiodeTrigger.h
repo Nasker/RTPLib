@@ -28,6 +28,7 @@ class RTPPhotoDiodeTrigger{
 		void setThreshold(int threshold);
 		void setCountGuard(int countGuardCycles);
 		void readnShoot(void (*f)(int,String));
+		void printReading();
 		bool overThreshold();
 };
 
