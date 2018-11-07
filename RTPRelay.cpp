@@ -12,10 +12,20 @@ RTPRelay::RTPRelay(byte relayOutputPin){
   _relayOutputPin = relayOutputPin;
   _state = false;
   pinMode(_relayOutputPin, OUTPUT);
+  _isInvertedLogic = false;
+  write();
+  
+}
+
+RTPRelay::RTPRelay(byte relayOutputPin, bool isInvertedLogic){
+  _relayOutputPin = relayOutputPin;
+  _state = false;
+  pinMode(_relayOutputPin, OUTPUT);
+  _isInvertedLogic = isInvertedLogic;
   write();
 }
 
-bool RTPRelay::isCoilActive(){
+bool RTPRelay::getState(){
 	return _state;
 }
 
@@ -31,5 +41,6 @@ void RTPRelay::switchState(){
 
 
 void RTPRelay::write(){
-	digitalWrite(_relayOutputPin, _state);
+	if(_isInvertedLogic) digitalWrite(_relayOutputPin, !_state);
+	else digitalWrite(_relayOutputPin, _state);
 }

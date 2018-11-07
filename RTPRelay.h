@@ -13,10 +13,12 @@ class RTPRelay{
 	byte _relayOutputPin;
 	bool _state;
 	bool _prevState;
+	bool _isInvertedLogic;
 	
 	public:
 		RTPRelay(byte relayOutputPin);
-		bool isCoilActive();
+		RTPRelay(byte relayOutputPin, bool isInvertedLogic);
+		bool getState();
 		void setState(bool state);
 		void switchState();
 
