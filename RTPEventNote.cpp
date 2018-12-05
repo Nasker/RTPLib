@@ -7,53 +7,53 @@
 #include "Arduino.h"
 #include "RTPEventNote.h"
 
-RTPEventNote::RTPEventNote(boolean _state, byte _note){
-	state = _state;
-	note = _note;
-	velocity = 100;
-	read = 0;
+RTPEventNote::RTPEventNote(boolean state, byte note){
+	_state = state;
+	_note = note;
+	_velocity = 100;
+	_read = 0;
 }
 
-RTPEventNote::RTPEventNote(boolean _state, byte _note, byte _velocity){
-	state = _state;
-	note = _note;
-	velocity = _velocity;
-	read = 0;
+RTPEventNote::RTPEventNote(boolean state, byte note, byte velocity){
+	_state = state;
+	_note = note;
+	_velocity = velocity;
+	_read = 0;
 }
 
 boolean RTPEventNote::eventState(){
-	return state;
+	return _state;
 }
 
 byte RTPEventNote::getEventNote(){
-	return note;
+	return _note;
 }
 
 int RTPEventNote::getEventRead(){
-	return read;
+	return _read;
 }
 
 byte RTPEventNote::getEventVelocity(){
-	return velocity;
+	return _velocity;
 }
 
-void RTPEventNote::setEventState(boolean _state){
-	state = _state;
+void RTPEventNote::setEventState(boolean state){
+	_state = state;
 }
 
-void RTPEventNote::setEventNote(byte _note){
-	note = _note;
+void RTPEventNote::setEventNote(byte note){
+	_note = note;
 }
 
-void RTPEventNote::setEventRead(int _read){
-	read = _read;
+void RTPEventNote::setEventRead(int read){
+	_read = read;
 }
 
-void RTPEventNote::setEventVelocity(byte _velocity){
-	velocity = _velocity;
+void RTPEventNote::setEventVelocity(byte velocity){
+	_velocity = velocity;
 }
 
 void RTPEventNote::switchState(){
-	state = !state;
+	_state = !_state;
 }
 

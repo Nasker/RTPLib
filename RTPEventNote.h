@@ -8,22 +8,22 @@
 #include "Arduino.h" 
 
 class RTPEventNote{
-    boolean state;
-    byte    note;
-    int	read;
-    byte 	velocity;
+    boolean _state;
+    byte    _note;
+    int	    _read;
+    byte 	_velocity;
 
 	public:
-    RTPEventNote(boolean _state, byte _note);
-    RTPEventNote(boolean _state, byte _note, byte _velocity);
+    RTPEventNote(boolean state, byte note);
+    RTPEventNote(boolean state, byte note, byte velocity);
     boolean eventState();
     byte getEventNote();
     int getEventRead();
     byte getEventVelocity();
-    void setEventState(boolean _state);
-    void setEventNote(byte _note);
-    void setEventRead(int _read);
-    void setEventVelocity(byte _velocity);
+    void setEventState(boolean state);
+    void setEventNote(byte note);
+    void setEventRead(int read);
+    void setEventVelocity(byte velocity);
     void switchState();
 };
 

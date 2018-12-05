@@ -7,8 +7,10 @@
 #define RTPPhotoDiodeTrigger_h
 
 #include "Arduino.h"
+#include <RTPSmooth.h>
 
 class RTPPhotoDiodeTrigger{
+	RTPSmooth smoother;
 	int _ID;
 	int _photoInput;
 	int _photoRead;

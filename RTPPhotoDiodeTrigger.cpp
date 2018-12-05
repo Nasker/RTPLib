@@ -41,7 +41,7 @@ void RTPPhotoDiodeTrigger::setCountGuard(int countGuardCycles){
 }
 
 void RTPPhotoDiodeTrigger::readnShoot(void (*f)(int, String)){
-  _photoRead = analogRead(_photoInput);
+  _photoRead = smoother.smooth(analogRead(_photoInput));
   if(_shootGuard) _countGuard++;
 
   if(_countGuard >= _coundGuardCycles){
