@@ -184,3 +184,7 @@ setCountGuard	KEYWORD2
 readnShoot	KEYWORD2	
 overThreshold	KEYWORD2
 printReading	KEYWORD2
+
+RTPTeensyWatchDog	KEYWORD1
+init	KEYWORD2
+kick	KEYWORD2
