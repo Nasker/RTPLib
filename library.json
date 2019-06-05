@@ -1,40 +1,22 @@
 {
   "name": "RTPLibrary",
-  "keywords": "onewire, 1-wire, bus, sensor, temperature",
-  "description": "Arduino Library for Dallas Temperature ICs (DS18B20, DS18S20, DS1822, DS1820)",
+  "keywords": "RTPLibrary, rockin, tech, projects, music",
+  "description": "Collection of libraries ofr RTP projects",
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/milesburton/Arduino-Temperature-Control-Library.git"
+    "url": "https://github.com/Nasker/RTPLib.git"
   },
   "authors":
   [
     {
-      "name": "Miles Burton",
-      "email": "miles@mnetcs.com",
-      "url": "http://www.milesburton.com",
+      "name": "Oscar Martinez Carmona",
+      "email": "xamps23@gmail.com",
+      "url": "http://nasker.portfoliobox.me",
       "maintainer": true
-    },
-    {
-      "name": "Tim Newsome",
-      "email": "nuisance@casualhacker.net"
-    },
-    {
-      "name": "Guil Barros",
-      "email": "gfbarros@bappos.com"
-    },
-    {
-      "name": "Rob Tillaart",
-      "email": "rob.tillaart@gmail.com"
     }
   ],
-  "dependencies":
-  {
-    "name": "OneWire",
-    "authors": "Paul Stoffregen",
-    "frameworks": "arduino"
-  },
-  "version": "3.7.7",
+  "version": "0.0.1",
   "frameworks": "arduino",
   "platforms": "*"
 }
