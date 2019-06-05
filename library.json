@@ -8,14 +8,12 @@
     "url": "https://github.com/Nasker/RTPLib.git"
   },
   "authors":
-  [
-    {
-      "name": "Oscar Martinez Carmona",
-      "email": "xamps23@gmail.com",
-      "url": "http://nasker.portfoliobox.me",
-      "maintainer": true
-    }
-  ],
+  {
+    "name": "Oscar Martinez Carmona",  
+    "email": "xamps23@gmail.com",
+    "url": "http://nasker.portfoliobox.me",
+    "maintainer": true
+  },
   "version": "0.0.1",
   "frameworks": "arduino",
   "platforms": "*"
