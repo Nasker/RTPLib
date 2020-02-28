@@ -10,7 +10,7 @@
 
 RTPButton::RTPButton(byte buttonInput, int mode){
   _buttonInput = buttonInput;
-  _coundGuardCycles = 500;
+  _coundGuardCycles = 500;;
   _countGuard = 0;
   _holdCounter = 0;
   _prevState = digitalRead(_buttonInput);
@@ -26,7 +26,7 @@ RTPButton::RTPButton(byte buttonInput, int mode){
 RTPButton::RTPButton(byte ID, byte buttonInput, int mode){
   _ID = ID;				
   _buttonInput = buttonInput;
-  _coundGuardCycles = 500;
+  _coundGuardCycles = 500;;
   _countGuard = 0;
   _holdCounter = 0;
   _prevState = digitalRead(_buttonInput);

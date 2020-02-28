@@ -15,11 +15,14 @@ const char scaleName[13][13] ={"Chromatic","Ionian",
         "Aeolian","Locrian","Harmonic","Gipsy","Hawaian",
         "Blues","Japanese"};
 
+const char chordName[N_CHORDS][16]={"mono","octave","powerchord","Major",
+      "minor","Major7th","minor7th","Dominant7th","Diminished","Augmented","Hendrixian","Suspended2th",
+      "Suspended4th","Dominant9th","Dominant11th","Mystic"};
+
 const char rootName[12][4] = {"C","C#","D","D#",
 	"E","F","F#","G","G#","A","A#","B"}; 
 
-class RTPMusicController{ 
-	
+class RTPMusicController{ 	
 	byte _CNote;
 	byte _currentNote;
 	byte _lastNote;
