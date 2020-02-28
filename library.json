@@ -14,7 +14,14 @@
     "url": "http://nasker.portfoliobox.me",
     "maintainer": true
   },
-  "version": "0.0.1",
+  "dependencies": [
+    {
+      "name": "Encoder",
+      "authors": "Paul Stoffregen",
+      "frameworks": "arduino"
+    }
+  ],
+  "version": "0.0.2",
   "frameworks": "arduino",
   "platforms": "*"
 }
