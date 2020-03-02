@@ -11,6 +11,7 @@ RTPChordMatrix::RTPChordMatrix(){
     _chordType = 0;
     _stepChord = 0;
     setChordType(_chordType);
+    _numberChords = N_CHORDS;
 }
 
 void RTPChordMatrix::setChordType(byte chordType){
@@ -31,4 +32,8 @@ int RTPChordMatrix::getChordStep(byte step){
 
 byte RTPChordMatrix::getChordSteps(){
     return _nSteps;
+}
+
+byte RTPDiatonicMatrix::getNumberChords(){
+    return _numberChords;
 }

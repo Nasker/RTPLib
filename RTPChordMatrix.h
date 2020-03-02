@@ -35,11 +35,13 @@ class RTPChordMatrix{
   byte _chordType;
   byte _stepChord;
   byte _nSteps;
+  byte _numberChords;
 
 	public:                      
 	RTPChordMatrix();         
     void setChordType(byte chordType);
     int getChordStep(byte step);
+    byte getSteps();
     byte getChordSteps();
     byte getChordType();
 };

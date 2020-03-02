@@ -63,6 +63,8 @@ class RTPMusicController{
         //getters...
         byte getCurrentNote();  
         byte getCurrentMidiNote();
+        byte getCurrentScaleMidiNote();
+        byte getCurrentChordMidiNote();
         byte getLastNote() ;
         byte getCurrentRootNote();
         byte getCurrentScale();

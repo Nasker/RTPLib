@@ -80,6 +80,13 @@ byte RTPMusicController::getCurrentMidiNote(){
 	return _currentRootNote + scales.getScaleStep(_currentStep) + _currentOctave * 12 + _octaveOffset * 12; 
 }
 
+byte RTPMusicController::getCurrentScaleMidiNote(){
+	return _currentRootNote + scales.getScaleStep(_currentStep) + _currentOctave * 12 + _octaveOffset * 12; 
+}
+
+byte RTPMusicController::getCurrentChordMidiNote(){
+	return _currentRootNote + chords.getChordStep(_currentStep) + _currentOctave * 12 + _octaveOffset * 12; 
+}
 
 byte RTPMusicController::getCurrentNote(){
 	return _currentNote;
