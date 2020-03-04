@@ -24,7 +24,7 @@ RTPSmartRange::RTPSmartRange(byte numberZones, byte numberStepsInZone, float ran
 	_rangeMinim = 0;
 } 
 
-RTPSmartRange::RTPSmartRange(int id, byte numberZones, byte numberStepsInZone, float rangeMinim, float rangeMaxim){
+RTPSmartRange::RTPSmartRange(int id, byte numberZones, uint_fast16_t numberStepsInZone, float rangeMinim, float rangeMaxim){
 	_id = id;
 	_numberZones = numberZones;
 	_numberStepsInZone = numberStepsInZone;

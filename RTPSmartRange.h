@@ -14,17 +14,17 @@ class RTPSmartRange{
 	float _normalizedRead;
 	byte _numberZones;       
     byte _currentZone; 
-    byte _numberStepsInZone;        
-    byte _currentStepInZone;   
-    byte _currentStep;
-    byte _pastStep;
+    uint_fast16_t _numberStepsInZone;        
+    uint_fast16_t _currentStepInZone;   
+    uint_fast16_t _currentStep;
+    uint_fast16_t _pastStep;
     float _rangeMaxim;
     float _rangeMinim;
 	
 	public:                
 		RTPSmartRange(byte numberZones, byte numberStepsInZone); 
         RTPSmartRange(byte numberZones, byte numberStepsInZone, float rangeMaxim); 
-        RTPSmartRange(int id, byte numberZones, byte numberStepsInZone, float rangeMinim, float rangeMaxim); 
+        RTPSmartRange(int id, byte numberZones, uint_fast16_t numberStepsInZone, float rangeMinim, float rangeMaxim); 
 
         void setNumberZones(byte numberZones);  
         void setNumberStepsInZone(byte steps);
