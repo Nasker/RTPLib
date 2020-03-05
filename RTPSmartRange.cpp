@@ -60,7 +60,7 @@ byte RTPSmartRange::getCurrentZone(int inputRange){
 	return _currentZone;
 }
 
-byte RTPSmartRange::getCurrentStepInZone(int inputRange){
+uint_fast16_t RTPSmartRange::getCurrentStepInZone(int inputRange){
 	inputRange = constrain(inputRange,0,_rangeMaxim);
 	calculateNormalisedRead(inputRange);
 	_currentZone = floor(_normalizedRead * float(_numberZones));
@@ -69,21 +69,21 @@ byte RTPSmartRange::getCurrentStepInZone(int inputRange){
 	return _currentStepInZone;
 }
 
-byte RTPSmartRange::getCurrentStep(int inputRange){
+uint_fast16_t RTPSmartRange::getCurrentStep(int inputRange){
 	calculateNormalisedRead(inputRange);
 	_currentZone = floor(_normalizedRead * float(_numberZones));
 	_currentStep = ceil(_normalizedRead * (_numberZones * _numberStepsInZone))-1;
 	return _currentStep;
 } 
 
-void RTPSmartRange::stepChanged(void (*f)(int, String,int,int)){
+void RTPSmartRange::stepChanged(void (*f)(int, String,uint_fast16_t,int)){
 	if(_currentStep != _pastStep){
 		(*f) (_id, "CHANGED", _currentStep, _currentZone);
 	} 
 	_pastStep = _currentStep;
 }  
 
-void RTPSmartRange::stepInZoneChanged(void (*f)(int, String,int,int)){
+void RTPSmartRange::stepInZoneChanged(void (*f)(int, String,uint_fast16_t,int)){
 	if(_currentStepInZone != _pastStep){
 		(*f) (_id, "CHANGED", _currentStepInZone, _currentZone);
 	} 

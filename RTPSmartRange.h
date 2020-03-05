@@ -34,11 +34,11 @@ class RTPSmartRange{
         float calculateNormalisedRead(int actualRead);
 
         byte getCurrentZone(int inputRange); 
-        byte getCurrentStepInZone(int inputRange);
-        byte getCurrentStep(int inputRange);
+        uint_fast16_t getCurrentStepInZone(int inputRange);
+        uint_fast16_t getCurrentStep(int inputRange);
 
-        void stepChanged(void(*f)(int,String,int,int));    
-        void stepInZoneChanged(void(*f)(int,String,int,int));  
+        void stepChanged(void(*f)(int,String,uint_fast16_t,int));    
+        void stepInZoneChanged(void(*f)(int,String,uint_fast16_t,int));  
 
         int rectFretBoardRead(int fretBoardRead);
 };
