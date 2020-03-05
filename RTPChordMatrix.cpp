@@ -34,6 +34,6 @@ byte RTPChordMatrix::getChordSteps(){
     return _nSteps;
 }
 
-byte RTPDiatonicMatrix::getNumberChords(){
+byte RTPChordMatrix::getNumberChords(){
     return _numberChords;
 }

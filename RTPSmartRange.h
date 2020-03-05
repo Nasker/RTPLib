@@ -38,6 +38,7 @@ class RTPSmartRange{
         byte getCurrentStep(int inputRange);
 
         void stepChanged(void(*f)(int,String,int,int));    
+        void stepInZoneChanged(void(*f)(int,String,int,int));  
 
         int rectFretBoardRead(int fretBoardRead);
 };

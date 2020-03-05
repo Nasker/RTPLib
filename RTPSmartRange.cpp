@@ -83,6 +83,13 @@ void RTPSmartRange::stepChanged(void (*f)(int, String,int,int)){
 	_pastStep = _currentStep;
 }  
 
+void RTPSmartRange::stepInZoneChanged(void (*f)(int, String,int,int)){
+	if(_currentStepInZone != _pastStep){
+		(*f) (_id, "CHANGED", _currentStepInZone, _currentZone);
+	} 
+	_pastStep = _currentStepInZone;
+}  
+
 int RTPSmartRange::rectFretBoardRead(int fretBoardRead){
 	int rectOutput=0;
   	if(fretBoardRead < 15) rectOutput = 0;
