@@ -25,13 +25,20 @@ RTPMusicController::RTPMusicController(){ 		//Constructor
 
 }
 
-
 void RTPMusicController::setCurrentNote(byte currentNote){
 	_currentNote = currentNote;
 }   
 
 void RTPMusicController::setCurrentStep(byte currentStep){
 	_currentStep = currentStep;
+}
+
+void RTPMusicController::setCurrentScaleStep(byte currentScaleStep){
+	_currentScaleStep = currentScaleStep;
+}
+
+void RTPMusicController::setCurrentChordStep(byte currentChordStep){
+	_currentChordStep = currentChordStep;
 }
 
 void RTPMusicController::setLastNote(byte lastNote){
@@ -59,6 +66,7 @@ void RTPMusicController::setCurrentScale(byte currentScale){
 }
 void RTPMusicController::setCurrentChord(byte currentChord){
 	_currentChord = currentChord;
+	chords.setChordType(currentChord);
 }
 void RTPMusicController::setLastChord(byte lastChord){
 	_lastChord = lastChord;
@@ -85,7 +93,7 @@ byte RTPMusicController::getCurrentScaleMidiNote(){
 }
 
 byte RTPMusicController::getCurrentChordMidiNote(){
-	return _currentRootNote + chords.getChordStep(_currentStep) + _currentOctave * 12 + _octaveOffset * 12; 
+	return _currentRootNote + chords.getChordStep(_currentChordStep) + _currentOctave * 12 + _octaveOffset * 12; 
 }
 
 byte RTPMusicController::getCurrentNote(){
@@ -131,15 +139,12 @@ byte RTPMusicController::getMidiChannel(){
 String RTPMusicController::getCurrentRootNoteName(){
 	byte rootIndex = _currentRootNote - _CNote;
 	return rootName[rootIndex];
-	//return rootIndex;
 }  
 
 String RTPMusicController::getScaleName(){
 	return scaleName[_currentScale];
-	//return rootIndex;
 } 
 
-
-
-
-
+String RTPMusicController::getChordName(){
+	return chordName[_currentChord];
+} 

@@ -27,6 +27,8 @@ class RTPMusicController{
 	byte _currentNote;
 	byte _lastNote;
 	byte _currentStep;
+        byte _currentScaleStep;
+        byte _currentChordStep;
 	byte _currentRootNote;
 	byte _currentOctave;
         byte _octaveOffset;
@@ -50,6 +52,8 @@ class RTPMusicController{
 	void setLastNote(byte lastNote);
         void setCurrentRootNote(byte currentRootNote);
         void setCurrentStep(byte currentStep);
+        void setCurrentScaleStep(byte currentStep);
+        void setCurrentChordStep(byte currentStep);
         void setCurrentOctave(byte currentOctave);
         void setCurrentScale(byte currentOctave);
         void setCurrentChord(byte currentChord);
@@ -78,6 +82,7 @@ class RTPMusicController{
         byte getMidiChannel(); 
         String getCurrentRootNoteName();
         String getScaleName();
+        String getChordName();
 };
 
 #endif
