@@ -31,18 +31,40 @@
       {0,6,10,16,21,26,-12,18} //Mystic
     };
 
+    const int arpChordStep[N_CHORDS][N_STEPS]={
+      {0},  //Monophonic
+      {0,12}, //Octave
+      {0,7},   //PowerChord
+      {0,4,7},  //Major
+      {0,3,7},  //Minor
+      {0,4,7,11},  //Major 7th
+      {0,3,7,10},  //Minor 7th
+      {0,4,7,10},  //Dominant 7th
+      {0,3,6}, //Diminished
+      {0,4,8}, //Augmented
+      {0,4,10},  //Hendrixian
+      {0,3,6}, //Sus2
+      {0,5,7}, //Sus4 
+      {0,4,8},  //Dominant Ninth
+      {0,3,8},  //Dominant Ninth
+      {0,6,10} //Mystic
+    };
+
 class RTPChordMatrix{
   byte _chordType;
   byte _stepChord;
   byte _nSteps;
+  byte _nArpSteps;
   byte _numberChords;
 
 	public:                      
 	RTPChordMatrix();         
     void setChordType(byte chordType);
+    void setArpChordType(byte chordType);
     int getChordStep(byte step);
     byte getSteps();
     byte getChordSteps();
+    byte getArpChordSteps();
     byte getChordType();
     byte getNumberChords();
 };
