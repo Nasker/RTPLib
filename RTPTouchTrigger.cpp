@@ -27,7 +27,12 @@ void RTPTouchTrigger::callibrate(int treshold){
  	Serial.println("Starting callibration!");
  	 	while (millis() < pastMillis + 4000) {
  		int sensorValue;
-		sensorValue = touchRead(_piezoInput);
+		#ifdef __arm__
+			sensorValue = touchRead(_piezoInput);
+		#else
+			sensorValue = analogRead(_piezoInput);
+		#endif		
+		
     	if (sensorValue > _envMax) {
       		_envMax = sensorValue;
     	}
@@ -60,7 +65,11 @@ void RTPTouchTrigger::setCountGuard(int countGuardCycles){
 }
 
 void RTPTouchTrigger::readnShoot(void (*f)(String,int,int,int)){
+	#ifdef __arm__
 	_piezoRead = touchRead(_piezoInput);
+	#else 	
+	_piezoRead = analogRead(_piezoInput);
+	#endif
     //Serial.println(_piezoRead);
   	if(_shootGuard) _countGuard++;
 

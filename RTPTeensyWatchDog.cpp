@@ -10,6 +10,7 @@ RTPTeensyWatchDog::RTPTeensyWatchDog(){
 }
 
 void RTPTeensyWatchDog::init(){
+	#ifdef __arm__
 	noInterrupts();                                         // don't allow interrupts while setting up WDOG
   	WDOG_UNLOCK = WDOG_UNLOCK_SEQ1;                         // unlock access to WDOG registers
   	WDOG_UNLOCK = WDOG_UNLOCK_SEQ2;
@@ -25,12 +26,16 @@ void RTPTeensyWatchDog::init(){
   	// Set options to enable WDT. You must always do this as a SINGLE write to WDOG_CTRLH
   	WDOG_STCTRLH |= WDOG_STCTRLH_ALLOWUPDATE | WDOG_STCTRLH_WDOGEN | WDOG_STCTRLH_WAITEN |	WDOG_STCTRLH_STOPEN | WDOG_STCTRLH_CLKSRC;
   	interrupts();
+	#endif	
+
 
 }
 		
 void RTPTeensyWatchDog::kick(){
+	#ifdef __arm__
 	noInterrupts();
   	WDOG_REFRESH = 0xA602;
   	WDOG_REFRESH = 0xB480;
   	interrupts();
+	#endif
 }

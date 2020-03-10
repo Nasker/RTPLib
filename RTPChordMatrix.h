@@ -65,6 +65,7 @@ class RTPChordMatrix{
     byte getSteps();
     byte getChordSteps();
     byte getArpChordSteps();
+    int getArpChordStep(byte step);
     byte getChordType();
     byte getNumberChords();
 };
