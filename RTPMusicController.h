@@ -10,6 +10,10 @@
 #include "RTPDiatonicMatrix.h"
 #include "RTPChordMatrix.h"
 
+#define SCALE 0
+#define FULL_CHORD 1
+#define ARP_CHORD 2
+
 const char scaleName[13][13] ={"Chromatic","Ionian",
         "Dorian","Phrygian","Lydian","Mixolydian",
         "Aeolian","Locrian","Harmonic","Gipsy","Hawaian",
@@ -29,6 +33,7 @@ class RTPMusicController{
 	byte _currentStep;
         byte _currentScaleStep;
         byte _currentChordStep;
+        byte _currentArpChordStep;
 	byte _currentRootNote;
 	byte _currentOctave;
         byte _octaveOffset;
@@ -54,6 +59,7 @@ class RTPMusicController{
         void setCurrentStep(byte currentStep);
         void setCurrentScaleStep(byte currentStep);
         void setCurrentChordStep(byte currentStep);
+        void setCurrentArpChordStep(byte currentStep);
         void setCurrentOctave(byte currentOctave);
         void setCurrentScale(byte currentOctave);
         void setCurrentChord(byte currentChord);
@@ -69,6 +75,7 @@ class RTPMusicController{
         byte getCurrentMidiNote();
         byte getCurrentScaleMidiNote();
         byte getCurrentChordMidiNote();
+        byte getCurrentArpChordMidiNote();
         byte getLastNote() ;
         byte getCurrentRootNote();
         byte getCurrentScale();

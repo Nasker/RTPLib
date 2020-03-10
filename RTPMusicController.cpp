@@ -3,10 +3,8 @@
 	Created by Oscar Martínez Carmona @ RockinTechProjects, May 8, 2014.
 */
 
-
 #include "Arduino.h"
 #include "RTPMusicController.h"
-
 
 RTPMusicController::RTPMusicController(){ 		//Constructor
 	_CNote = 36;
@@ -22,7 +20,6 @@ RTPMusicController::RTPMusicController(){ 		//Constructor
 	_numberOctaves = 2;
 	_velocity = 100;
 	_midiChannel = 0x90;
-
 }
 
 void RTPMusicController::setCurrentNote(byte currentNote){
@@ -41,9 +38,14 @@ void RTPMusicController::setCurrentChordStep(byte currentChordStep){
 	_currentChordStep = currentChordStep;
 }
 
+void RTPMusicController::setCurrentArpChordStep(byte currentArpChordStep){
+	_currentArpChordStep = currentArpChordStep;
+}
+
 void RTPMusicController::setLastNote(byte lastNote){
 	_lastNote = lastNote;
 } 
+
 void RTPMusicController::setCurrentRootNote(byte currentRootNote){
 	_currentRootNote = _CNote + currentRootNote;
 }
@@ -94,6 +96,10 @@ byte RTPMusicController::getCurrentScaleMidiNote(){
 
 byte RTPMusicController::getCurrentChordMidiNote(){
 	return _currentRootNote + chords.getChordStep(_currentChordStep) + _currentOctave * 12 + _octaveOffset * 12; 
+}
+
+byte RTPMusicController::getCurrentArpChordMidiNote(){
+	return _currentRootNote + chords.getArpChordStep(_currentChordStep) + _currentOctave * 12 + _octaveOffset * 12; 
 }
 
 byte RTPMusicController::getCurrentNote(){
