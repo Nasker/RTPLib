@@ -24,7 +24,7 @@ void RTPChordMatrix::setChordType(byte chordType){
 
 void RTPChordMatrix::setArpChordType(byte chordType){
     _chordType = chordType;
-    if(_chordType==0) _nArpSteps = 1;
+    if(_chordType<=1) _nArpSteps = 1;
     else if(_chordType<=2) _nArpSteps = 2;
     else if(_chordType > 4  && _chordType <= 4) _nArpSteps = 4;
     else _nArpSteps = 3;

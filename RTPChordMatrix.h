@@ -33,7 +33,7 @@
 
     const int arpChordStep[N_CHORDS][N_STEPS]={
       {0},  //Monophonic
-      {0,12}, //Octave
+      {0}, //Octave
       {0,7},   //PowerChord
       {0,4,7},  //Major
       {0,3,7},  //Minor
