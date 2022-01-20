@@ -10,7 +10,7 @@ RTPTeensyWatchDog::RTPTeensyWatchDog(){
 }
 
 void RTPTeensyWatchDog::init(){
-	#ifdef __arm__
+	#ifdef defined(__MK20DX128__)
 	noInterrupts();                                         // don't allow interrupts while setting up WDOG
   	WDOG_UNLOCK = WDOG_UNLOCK_SEQ1;                         // unlock access to WDOG registers
   	WDOG_UNLOCK = WDOG_UNLOCK_SEQ2;
@@ -32,7 +32,7 @@ void RTPTeensyWatchDog::init(){
 }
 		
 void RTPTeensyWatchDog::kick(){
-	#ifdef __arm__
+	#ifdef defined(__MK20DX128__)
 	noInterrupts();
   	WDOG_REFRESH = 0xA602;
   	WDOG_REFRESH = 0xB480;
