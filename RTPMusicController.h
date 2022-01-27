@@ -10,14 +10,17 @@
 #include "RTPDiatonicMatrix.h"
 #include "RTPChordMatrix.h"
 
-#define SCALE 0
-#define FULL_CHORD 1
-#define ARP_CHORD 2
+enum PART_TYPE{
+        SCALE,
+        FULL_CHORD,
+        ARP_CHORD,
+        DRUM
+}
 
-const char scaleName[13][13] ={"Chromatic","Ionian",
+const char scaleName[14][16] ={"Chromatic","Ionian",
         "Dorian","Phrygian","Lydian","Mixolydian",
         "Aeolian","Locrian","Harmonic","Gipsy","Hawaian",
-        "Blues","Japanese"};
+        "Blues","Japanese", "Drum"};
 
 const char chordName[N_CHORDS][16]={"mono","octave","powerchord","Major",
       "minor","Major7th","minor7th","Dominant7th","Diminished","Augmented","Hendrixian","Suspended2th",

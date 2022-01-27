@@ -15,7 +15,7 @@ RTPDiatonicMatrix::RTPDiatonicMatrix(){
     _stepScale = 0;
     _nSteps = 0;
     _step = 0;
-    _numberScales = 13;
+    _numberScales = 14;
 }
 
 void RTPDiatonicMatrix::setTonality(byte tonality){
@@ -30,7 +30,8 @@ byte RTPDiatonicMatrix::getSteps(){
 if (_tonality == 0) _nSteps=12;                                        //fraccions de notes en funció de la escala
     else if (_tonality < 10 && _tonality > 0)  _nSteps = 7;
     else if (_tonality == 10) _nSteps = 6;
-    else _nSteps = 5;  
+    else if (_tonality < 13) _nSteps = 5;  
+    else _nSteps = 16;
     return _nSteps;
 }
 

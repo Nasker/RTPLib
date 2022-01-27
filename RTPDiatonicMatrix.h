@@ -8,7 +8,7 @@
 #define RTPDiatonicMatrix_h   
 
 #include "Arduino.h" 
-  const byte toneStep[13][13] = {
+  const byte toneStep[14][16] = {
     {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, //0-Chromatic
     {0, 2, 4, 5, 7, 9, 11, 12}, //1-Ionian
     {0, 2, 3, 5, 7, 9, 10, 12}, //2-Dorian
@@ -21,7 +21,8 @@
     {0, 1, 4, 5, 7, 8, 10, 12}, //9-Spanish Gipsy
     {0, 2, 3, 5, 7, 9, 11, 12}, //10-Hawaian
     {0, 3, 5, 6, 7, 10, 12}, //11-Blues
-    {0, 1, 5, 7, 8, 12} //12-Japanese   
+    {0, 1, 5, 7, 8, 12}, //12-Japanese   
+    {36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51} // 13-Drum
   };
 
 class RTPDiatonicMatrix{
