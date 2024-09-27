@@ -8,13 +8,25 @@
 #include "RTPRotary.h"
 
 void RTPRotary::callbackOnRotation( void (*userFunc)(int,String,int,int) ){
-	long newPosition = read()/4;
-  	if (newPosition < _oldPosition) {
-   		_oldPosition = newPosition;
-   		(*userFunc)(_ID,"LEFT",-1,newPosition);
-  	}
-  	else if (newPosition > _oldPosition) {
-   		_oldPosition = newPosition;
-   		(*userFunc)(_ID,"RIGHT",1,newPosition);
-  	}
+	long newPosition = read()/_divider;
+	if (newPosition < _oldPosition) {
+		_oldPosition = newPosition;
+		(*userFunc)(_ID,"LEFT",-1,newPosition);
+	}
+	else if (newPosition > _oldPosition) {
+		_oldPosition = newPosition;
+		(*userFunc)(_ID,"RIGHT",1,newPosition);
+	}
+}
+
+void RTPRotary::callbackOnRotation( void (*userFunc)(int,int,int,int) ){
+	long newPosition = read()/_divider;
+	if (newPosition < _oldPosition) {
+		_oldPosition = newPosition;
+		(*userFunc)(_ID,UP,-1,newPosition);
+	}
+	else if (newPosition > _oldPosition) {
+		_oldPosition = newPosition;
+		(*userFunc)(_ID,DOWN,1,newPosition);
+	}
 }
