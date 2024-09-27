@@ -15,7 +15,7 @@ enum PART_TYPE{
         FULL_CHORD,
         ARP_CHORD,
         DRUM
-}
+};
 
 const char scaleName[14][16] ={"Chromatic","Ionian",
         "Dorian","Phrygian","Lydian","Mixolydian",
