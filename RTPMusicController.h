@@ -22,9 +22,12 @@ const char scaleName[14][16] ={"Chromatic","Ionian",
         "Aeolian","Locrian","Harmonic","Gipsy","Hawaian",
         "Blues","Japanese", "Drum"};
 
-const char chordName[N_CHORDS][16]={"mono","octave","powerchord","Major",
-      "minor","Major7th","minor7th","Dominant7th","Diminished","Augmented","Hendrixian","Suspended2th",
-      "Suspended4th","Dominant9th","Dominant11th","Mystic"};
+const char chordName[N_CHORDS][16] = {
+    "mono", "Major", "minor", "Major7th", "minor7th", 
+    "Dominant7th", "Diminished", "Diminished7th", 
+    "HalfDim7th", "Augmented", "Major9th", "minor9th", 
+    "Dominant9th", "Suspended4th", "Suspended2th", "Sixth"
+};
 
 const char rootName[12][4] = {"C","C#","D","D#",
 	"E","F","F#","G","G#","A","A#","B"}; 
