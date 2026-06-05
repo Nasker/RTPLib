@@ -11,6 +11,6 @@
 RTPMidi2Freq::RTPMidi2Freq(){
 }
 
-float RTPMidi2Freq::getFreq(byte midiNumber){
+float RTPMidi2Freq::getFreq(uint8_t midiNumber){
     return midi2Freq[midiNumber];
 }

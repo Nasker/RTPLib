@@ -8,7 +8,7 @@
 #include "RTPRelay.h"
 
 
-RTPRelay::RTPRelay(byte relayOutputPin){
+RTPRelay::RTPRelay(uint8_t relayOutputPin){
   _relayOutputPin = relayOutputPin;
   _state = false;
   pinMode(_relayOutputPin, OUTPUT);
@@ -17,7 +17,7 @@ RTPRelay::RTPRelay(byte relayOutputPin){
   
 }
 
-RTPRelay::RTPRelay(byte relayOutputPin, bool isInvertedLogic){
+RTPRelay::RTPRelay(uint8_t relayOutputPin, bool isInvertedLogic){
   _relayOutputPin = relayOutputPin;
   _state = false;
   pinMode(_relayOutputPin, OUTPUT);

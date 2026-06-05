@@ -14,7 +14,7 @@ RTPChordMatrix::RTPChordMatrix(){
     _numberChords = N_CHORDS;
 }
 
-void RTPChordMatrix::setChordType(byte chordType){
+void RTPChordMatrix::setChordType(uint8_t chordType){
     _chordType = chordType;
     if(_chordType<=1) _nSteps = 4;
     else if(_chordType==2) _nSteps = 6;
@@ -22,7 +22,7 @@ void RTPChordMatrix::setChordType(byte chordType){
     else _nSteps = 7;
 }
 
-void RTPChordMatrix::setArpChordType(byte chordType){
+void RTPChordMatrix::setArpChordType(uint8_t chordType){
     _chordType = chordType;
     if(_chordType<=1) _nArpSteps = 1;
     else if(_chordType<=2) _nArpSteps = 2;
@@ -30,26 +30,26 @@ void RTPChordMatrix::setArpChordType(byte chordType){
     else _nArpSteps = 3;
 }
 
-byte RTPChordMatrix::getChordType(){
+uint8_t RTPChordMatrix::getChordType(){
     return _chordType;
 }
 
-int RTPChordMatrix::getChordStep(byte step){
+int RTPChordMatrix::getChordStep(uint8_t step){
     return chordStep[_chordType][step];
 }
 
-int RTPChordMatrix::getArpChordStep(byte step){
+int RTPChordMatrix::getArpChordStep(uint8_t step){
     return arpChordStep[_chordType][step];
 }
 
-byte RTPChordMatrix::getChordSteps(){
+uint8_t RTPChordMatrix::getChordSteps(){
     return _nSteps;
 }
 
-byte RTPChordMatrix::getArpChordSteps(){
+uint8_t RTPChordMatrix::getArpChordSteps(){
     return _nArpSteps;
 }
 
-byte RTPChordMatrix::getNumberChords(){
+uint8_t RTPChordMatrix::getNumberChords(){
     return _numberChords;
 }

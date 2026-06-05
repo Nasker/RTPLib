@@ -80,23 +80,23 @@ std::vector<int> reorder_chord(std::vector<int> chord, std::vector<int> last_cho
   */
 
 class RTPChordMatrix{
-  byte _chordType;
-  byte _stepChord;
-  byte _nSteps;
-  byte _nArpSteps;
-  byte _numberChords;
+  uint8_t _chordType;
+  uint8_t _stepChord;
+  uint8_t _nSteps;
+  uint8_t _nArpSteps;
+  uint8_t _numberChords;
 
 	public:                      
 	RTPChordMatrix();         
-    void setChordType(byte chordType);
-    void setArpChordType(byte chordType);
-    int getChordStep(byte step);
-    byte getSteps();
-    byte getChordSteps();
-    byte getArpChordSteps();
-    int getArpChordStep(byte step);
-    byte getChordType();
-    byte getNumberChords();
+    void setChordType(uint8_t chordType);
+    void setArpChordType(uint8_t chordType);
+    int getChordStep(uint8_t step);
+    uint8_t getSteps();
+    uint8_t getChordSteps();
+    uint8_t getArpChordSteps();
+    int getArpChordStep(uint8_t step);
+    uint8_t getChordType();
+    uint8_t getNumberChords();
 };
 
 #endif

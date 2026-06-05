@@ -18,15 +18,15 @@ RTPDiatonicMatrix::RTPDiatonicMatrix(){
     _numberScales = 14;
 }
 
-void RTPDiatonicMatrix::setTonality(byte tonality){
+void RTPDiatonicMatrix::setTonality(uint8_t tonality){
     _tonality = tonality;
 }
 
-byte RTPDiatonicMatrix::getTonality(){
+uint8_t RTPDiatonicMatrix::getTonality(){
     return _tonality;
 }
 
-byte RTPDiatonicMatrix::getSteps(){
+uint8_t RTPDiatonicMatrix::getSteps(){
 if (_tonality == 0) _nSteps=12;                                        //fraccions de notes en funció de la escala
     else if (_tonality < 10 && _tonality > 0)  _nSteps = 7;
     else if (_tonality == 10) _nSteps = 6;
@@ -35,12 +35,12 @@ if (_tonality == 0) _nSteps=12;                                        //fraccio
     return _nSteps;
 }
 
-byte RTPDiatonicMatrix::getScaleStep(byte stepScale){
+uint8_t RTPDiatonicMatrix::getScaleStep(uint8_t stepScale){
 _stepScale = stepScale;
 _step= toneStep[_tonality][_stepScale];
 return _step;
 }
 
-byte RTPDiatonicMatrix::getNumberScales(){
+uint8_t RTPDiatonicMatrix::getNumberScales(){
     return _numberScales;
 }

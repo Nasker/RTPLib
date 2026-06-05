@@ -22,34 +22,34 @@ RTPMusicController::RTPMusicController(){ 		//Constructor
 	_midiChannel = 0x90;
 }
 
-void RTPMusicController::setCurrentNote(byte currentNote){
+void RTPMusicController::setCurrentNote(uint8_t currentNote){
 	_currentNote = currentNote;
 }   
 
-void RTPMusicController::setCurrentStep(byte currentStep){
+void RTPMusicController::setCurrentStep(uint8_t currentStep){
 	_currentStep = currentStep;
 }
 
-void RTPMusicController::setCurrentScaleStep(byte currentScaleStep){
+void RTPMusicController::setCurrentScaleStep(uint8_t currentScaleStep){
 	_currentScaleStep = currentScaleStep;
 }
 
-void RTPMusicController::setCurrentChordStep(byte currentChordStep){
+void RTPMusicController::setCurrentChordStep(uint8_t currentChordStep){
 	_currentChordStep = currentChordStep;
 }
 
-void RTPMusicController::setCurrentArpChordStep(byte currentArpChordStep){
+void RTPMusicController::setCurrentArpChordStep(uint8_t currentArpChordStep){
 	_currentArpChordStep = currentArpChordStep;
 }
 
-void RTPMusicController::setLastNote(byte lastNote){
+void RTPMusicController::setLastNote(uint8_t lastNote){
 	_lastNote = lastNote;
 } 
 
-void RTPMusicController::setCurrentRootNote(byte currentRootNote){
+void RTPMusicController::setCurrentRootNote(uint8_t currentRootNote){
 	_currentRootNote = _CNote + currentRootNote;
 }
-void RTPMusicController::setCurrentOctave(byte currentOctave){
+void RTPMusicController::setCurrentOctave(uint8_t currentOctave){
 	_currentOctave = currentOctave;
 }
 void RTPMusicController::upOctave(){
@@ -62,88 +62,88 @@ void RTPMusicController::downOctave(){
 		_octaveOffset--;
 	} 
 }
-void RTPMusicController::setCurrentScale(byte currentScale){
+void RTPMusicController::setCurrentScale(uint8_t currentScale){
 	_currentScale = currentScale;
 	scales.setTonality(_currentScale);
 }
-void RTPMusicController::setCurrentChord(byte currentChord){
+void RTPMusicController::setCurrentChord(uint8_t currentChord){
 	_currentChord = currentChord;
 	chords.setChordType(currentChord);
 }
-void RTPMusicController::setLastChord(byte lastChord){
+void RTPMusicController::setLastChord(uint8_t lastChord){
 	_lastChord = lastChord;
 } 
-void RTPMusicController::setVoices(byte voices){
+void RTPMusicController::setVoices(uint8_t voices){
 	_voices = voices;
 }
-void RTPMusicController::setVelocity(byte velocity){
+void RTPMusicController::setVelocity(uint8_t velocity){
 	_velocity = velocity;
 }
-void RTPMusicController::setNumberOctaves(byte numberOctaves){
+void RTPMusicController::setNumberOctaves(uint8_t numberOctaves){
 	_numberOctaves = numberOctaves;
 }
-void RTPMusicController::setMidiChannel(byte midiChannel){
+void RTPMusicController::setMidiChannel(uint8_t midiChannel){
 	_midiChannel = midiChannel;
 }       
 
-byte RTPMusicController::getCurrentMidiNote(){
+uint8_t RTPMusicController::getCurrentMidiNote(){
 	return _currentRootNote + scales.getScaleStep(_currentStep) + _currentOctave * 12 + _octaveOffset * 12; 
 }
 
-byte RTPMusicController::getCurrentScaleMidiNote(){
+uint8_t RTPMusicController::getCurrentScaleMidiNote(){
 	return _currentRootNote + scales.getScaleStep(_currentStep) + _currentOctave * 12 + _octaveOffset * 12; 
 }
 
-byte RTPMusicController::getCurrentChordMidiNote(){
+uint8_t RTPMusicController::getCurrentChordMidiNote(){
 	return _currentRootNote + chords.getChordStep(_currentChordStep) + _currentOctave * 12 + _octaveOffset * 12; 
 }
 
-byte RTPMusicController::getCurrentArpChordMidiNote(){
+uint8_t RTPMusicController::getCurrentArpChordMidiNote(){
 	return _currentRootNote + chords.getArpChordStep(_currentChordStep) + _currentOctave * 12 + _octaveOffset * 12; 
 }
 
-byte RTPMusicController::getCurrentNote(){
+uint8_t RTPMusicController::getCurrentNote(){
 	return _currentNote;
 }   
-byte RTPMusicController::getLastNote(){
+uint8_t RTPMusicController::getLastNote(){
 	return _lastNote;
 } 
 
-byte RTPMusicController::getCurrentRootNote(){
+uint8_t RTPMusicController::getCurrentRootNote(){
 	return _currentRootNote- _CNote;
 }
-byte RTPMusicController::getCurrentScale(){
+uint8_t RTPMusicController::getCurrentScale(){
 	return _currentScale;
 }
-byte RTPMusicController::getCurrentChord(){
+uint8_t RTPMusicController::getCurrentChord(){
 	return _currentChord;
 }
-byte RTPMusicController::getLastChord(){
+uint8_t RTPMusicController::getLastChord(){
 	return _lastChord;
 } 
-byte RTPMusicController::getVoices(){
+uint8_t RTPMusicController::getVoices(){
 	return _voices;
 }
-byte RTPMusicController::getVelocity(){
+uint8_t RTPMusicController::getVelocity(){
 	return _velocity;
 }
-byte RTPMusicController::getNumberOctaves(){
+uint8_t RTPMusicController::getNumberOctaves(){
 	return _numberOctaves;
 }   
-byte RTPMusicController::getCurrentOctave(){
+uint8_t RTPMusicController::getCurrentOctave(){
 	return _currentOctave;
 }   
 
-byte RTPMusicController::getOctaveOffset(){
+uint8_t RTPMusicController::getOctaveOffset(){
 	return _octaveOffset;
 } 
 
-byte RTPMusicController::getMidiChannel(){
+uint8_t RTPMusicController::getMidiChannel(){
 	return _midiChannel;
 } 
 
 String RTPMusicController::getCurrentRootNoteName(){
-	byte rootIndex = _currentRootNote - _CNote;
+	uint8_t rootIndex = _currentRootNote - _CNote;
 	return rootName[rootIndex];
 }  
 

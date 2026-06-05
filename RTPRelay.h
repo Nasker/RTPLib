@@ -10,14 +10,14 @@
 
 
 class RTPRelay{
-	byte _relayOutputPin;
+	uint8_t _relayOutputPin;
 	bool _state;
 	bool _prevState;
 	bool _isInvertedLogic;
 	
 	public:
-		RTPRelay(byte relayOutputPin);
-		RTPRelay(byte relayOutputPin, bool isInvertedLogic);
+		RTPRelay(uint8_t relayOutputPin);
+		RTPRelay(uint8_t relayOutputPin, bool isInvertedLogic);
 		bool getState();
 		void setState(bool state);
 		void switchState();

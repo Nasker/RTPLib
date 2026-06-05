@@ -24,7 +24,7 @@ RTPClickButton::RTPClickButton(uint8_t buttonPin){
 }
 
 
-RTPClickButton::RTPClickButton(uint8_t buttonPin, boolean activeType){
+RTPClickButton::RTPClickButton(uint8_t buttonPin, bool activeType){
   _pin           = buttonPin;
   _activeHigh    = activeType;
   _btnState      = !_activeHigh;  // initial button state in active-high logic
@@ -39,7 +39,7 @@ RTPClickButton::RTPClickButton(uint8_t buttonPin, boolean activeType){
   pinMode(_pin, INPUT);
 }
 
-RTPClickButton::RTPClickButton(uint8_t buttonPin, boolean activeType, boolean internalPullup){
+RTPClickButton::RTPClickButton(uint8_t buttonPin, bool activeType, bool internalPullup){
   _pin           = buttonPin;
   _activeHigh    = activeType;
   _btnState      = !_activeHigh;  // initial button state in active-high logic

@@ -8,7 +8,7 @@
 #define RTPDiatonicMatrix_h   
 
 #include "Arduino.h" 
-  const byte toneStep[14][16] = {
+  const uint8_t toneStep[14][16] = {
     {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}, //0-Chromatic
     {0, 2, 4, 5, 7, 9, 11, 12}, //1-Ionian
     {0, 2, 3, 5, 7, 9, 10, 12}, //2-Dorian
@@ -28,19 +28,19 @@
 class RTPDiatonicMatrix{
 
 // Array de coeficients de semitons equivalents a cada escala.
-  byte _tonality;
-  byte _stepScale;
-  byte _nSteps;
-  byte _step;
-  byte _numberScales;
+  uint8_t _tonality;
+  uint8_t _stepScale;
+  uint8_t _nSteps;
+  uint8_t _step;
+  uint8_t _numberScales;
 
 	public:                        //A public hi declarem els mètodes que volem emprar desde fora de la classe!
 		RTPDiatonicMatrix();         //Mètode constructor(imprescindible per inicialitzar la classe!
-    void setTonality(byte tonality);
-    byte getTonality();
-    byte getSteps();
-    byte getScaleStep(byte stepScale);
-    byte getNumberScales();
+    void setTonality(uint8_t tonality);
+    uint8_t getTonality();
+    uint8_t getSteps();
+    uint8_t getScaleStep(uint8_t stepScale);
+    uint8_t getNumberScales();
     
   private:
 

@@ -15,10 +15,10 @@ class RTPBatteryControl{
 	float _batteryLowLevelThreshold;
 	float _powerSupplyThreshold;
 	float _vccRead;
-	boolean _prevBatteryState;
-	boolean _lowBattery;
-	boolean _vccExternalSource;
-	boolean _prevLevelState;
+	bool _prevBatteryState;
+	bool _lowBattery;
+	bool _vccExternalSource;
+	bool _prevLevelState;
 	RTPSmooth adcAverage;
 	
 	public:

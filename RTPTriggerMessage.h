@@ -12,19 +12,19 @@
 #define PULLUP 1
 
 class RTPTriggerMessage{
-	byte _inputPin;
-	byte _outputPin;
+	uint8_t _inputPin;
+	uint8_t _outputPin;
 	bool _state;
 	bool _prevState;
 	int _coundGuardCycles;  
 	int _countGuard;
-	boolean _shootGuard;
+	bool _shootGuard;
 	unsigned int _holdCounter;
 	int _mode;
 	String _fileName;
 	
 	public:
-		RTPTriggerMessage(byte inputPin, byte outputPin, String fileName, int mode);
+		RTPTriggerMessage(uint8_t inputPin, uint8_t outputPin, String fileName, int mode);
 		bool pressed();
 		void setOutputHigh();
 		void setOutputLow();
@@ -35,7 +35,7 @@ class RTPTriggerMessage{
 
 	private:
 		void read();
-		void write(boolean state);
+		void write(bool state);
 };
 
 #endif

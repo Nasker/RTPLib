@@ -20,7 +20,7 @@ float _pitchBendOut;
 	public:                        
 		RTPPitchControl();         
 		float getPitchBend(float bendRead);
-		void setPitchRange(byte rangeSemitones);
+		void setPitchRange(uint8_t rangeSemitones);
 };
 
 #endif

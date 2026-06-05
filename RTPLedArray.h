@@ -9,16 +9,16 @@
 #include "Arduino.h"
 
 class RTPLedArray{
-	byte _firstPin;
-	byte _nLeds;
-	byte _ledArray[];
+	uint8_t _firstPin;
+	uint8_t _nLeds;
+	uint8_t _ledArray[];
 	
 	public:
-		RTPLedArray(byte firstPin, byte nLeds);
-		//RTPLedArray(byte ledArray[], byte nLeds);
+		RTPLedArray(uint8_t firstPin, uint8_t nLeds);
+		//RTPLedArray(uint8_t ledArray[], uint8_t nLeds);
 
-		void update(byte value);
-		//void updateArray(byte value);
+		void update(uint8_t value);
+		//void updateArray(uint8_t value);
 };
 
 #endif

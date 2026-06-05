@@ -7,25 +7,25 @@
 #include "Arduino.h"
 #include "RTPEventNote.h"
 
-RTPEventNote::RTPEventNote(boolean state, byte note){
+RTPEventNote::RTPEventNote(bool state, uint8_t note){
 	_state = state;
 	_note = note;
 	_velocity = 100;
 	_read = 0;
 }
 
-RTPEventNote::RTPEventNote(boolean state, byte note, byte velocity){
+RTPEventNote::RTPEventNote(bool state, uint8_t note, uint8_t velocity){
 	_state = state;
 	_note = note;
 	_velocity = velocity;
 	_read = 0;
 }
 
-boolean RTPEventNote::eventState(){
+bool RTPEventNote::eventState(){
 	return _state;
 }
 
-byte RTPEventNote::getEventNote(){
+uint8_t RTPEventNote::getEventNote(){
 	return _note;
 }
 
@@ -33,15 +33,15 @@ int RTPEventNote::getEventRead(){
 	return _read;
 }
 
-byte RTPEventNote::getEventVelocity(){
+uint8_t RTPEventNote::getEventVelocity(){
 	return _velocity;
 }
 
-void RTPEventNote::setEventState(boolean state){
+void RTPEventNote::setEventState(bool state){
 	_state = state;
 }
 
-void RTPEventNote::setEventNote(byte note){
+void RTPEventNote::setEventNote(uint8_t note){
 	_note = note;
 }
 
@@ -49,7 +49,7 @@ void RTPEventNote::setEventRead(int read){
 	_read = read;
 }
 
-void RTPEventNote::setEventVelocity(byte velocity){
+void RTPEventNote::setEventVelocity(uint8_t velocity){
 	_velocity = velocity;
 }
 

@@ -29,7 +29,7 @@ class RTPMidi2Freq{
 
 	public:                        
 		RTPMidi2Freq();   
-    float getFreq(byte midiNumber);      
+    float getFreq(uint8_t midiNumber);      
 
 };
 

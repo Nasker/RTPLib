@@ -28,6 +28,6 @@ float RTPPitchControl::getPitchBend(float bendRead){
     return _pitchBendOut;
 }
 
-void RTPPitchControl::setPitchRange(byte rangeSemitones){
+void RTPPitchControl::setPitchRange(uint8_t rangeSemitones){
 	_pitchBendRange = rangeSemitones;
 }

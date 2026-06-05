@@ -8,7 +8,7 @@
 #include "RTPSmartRange.h"
 
 
-RTPSmartRange::RTPSmartRange(byte numberZones, byte numberStepsInZone){
+RTPSmartRange::RTPSmartRange(uint8_t numberZones, uint8_t numberStepsInZone){
 	_id = 0;
 	_numberZones = numberZones;
 	_numberStepsInZone = numberStepsInZone;
@@ -16,7 +16,7 @@ RTPSmartRange::RTPSmartRange(byte numberZones, byte numberStepsInZone){
 	_rangeMinim = 0;
 } 
 
-RTPSmartRange::RTPSmartRange(byte numberZones, byte numberStepsInZone, float rangeMaxim){
+RTPSmartRange::RTPSmartRange(uint8_t numberZones, uint8_t numberStepsInZone, float rangeMaxim){
 	_id = 0;
 	_numberZones = numberZones;
 	_numberStepsInZone = numberStepsInZone;
@@ -24,7 +24,7 @@ RTPSmartRange::RTPSmartRange(byte numberZones, byte numberStepsInZone, float ran
 	_rangeMinim = 0;
 } 
 
-RTPSmartRange::RTPSmartRange(int id, byte numberZones, uint_fast16_t numberStepsInZone, float rangeMinim, float rangeMaxim){
+RTPSmartRange::RTPSmartRange(int id, uint8_t numberZones, uint_fast16_t numberStepsInZone, float rangeMinim, float rangeMaxim){
 	_id = id;
 	_numberZones = numberZones;
 	_numberStepsInZone = numberStepsInZone;
@@ -33,11 +33,11 @@ RTPSmartRange::RTPSmartRange(int id, byte numberZones, uint_fast16_t numberSteps
 } 
 
 
-void RTPSmartRange::setNumberZones(byte numberStepsInZone){
+void RTPSmartRange::setNumberZones(uint8_t numberStepsInZone){
 	_numberStepsInZone = numberStepsInZone;
 }  
 
-void RTPSmartRange::setNumberStepsInZone(byte steps){
+void RTPSmartRange::setNumberStepsInZone(uint8_t steps){
 	_numberStepsInZone = steps;
 }
 
@@ -53,7 +53,7 @@ float RTPSmartRange::calculateNormalisedRead(int actualRead){
 	return _normalizedRead;
 }
 
-byte RTPSmartRange::getCurrentZone(int inputRange){
+uint8_t RTPSmartRange::getCurrentZone(int inputRange){
 	calculateNormalisedRead(inputRange);
 	//Serial.println(inputRange);
 	_currentZone = floor(_normalizedRead * float(_numberZones));

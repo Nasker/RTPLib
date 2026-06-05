@@ -8,7 +8,7 @@
 #include "RTPTriggerMessage.h"
 
 
-RTPTriggerMessage::RTPTriggerMessage(byte inputPin, byte outputPin, String fileName, int mode){
+RTPTriggerMessage::RTPTriggerMessage(uint8_t inputPin, uint8_t outputPin, String fileName, int mode){
   _inputPin = inputPin;
   _outputPin = outputPin;
   _coundGuardCycles = 500;
@@ -31,7 +31,7 @@ void RTPTriggerMessage::read(){
 	  else _state = digitalRead(_inputPin);
  }
 
-void RTPTriggerMessage::write(boolean state){
+void RTPTriggerMessage::write(bool state){
  	digitalWrite(_outputPin,state);
 }
 

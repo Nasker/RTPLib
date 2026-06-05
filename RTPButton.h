@@ -12,19 +12,19 @@
 #define PULLUP 1
 
 class RTPButton{
-	byte _buttonInput;
+	uint8_t _buttonInput;
 	int _ID;
 	bool _state;
 	bool _prevState;
 	int _coundGuardCycles;  
 	int _countGuard;
-	boolean _shootGuard;
+	bool _shootGuard;
 	unsigned int _holdCounter;
 	int _mode;
 	
 	public:
-		RTPButton(byte buttonInput, int mode);
-		RTPButton(byte ID, byte buttonInput, int mode);
+		RTPButton(uint8_t buttonInput, int mode);
+		RTPButton(uint8_t ID, uint8_t buttonInput, int mode);
 		bool pressed();
 		void callbackClick( void (*f)(String) );
 		void callbackDeClick( void (*f)(String) );

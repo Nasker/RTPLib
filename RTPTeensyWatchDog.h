@@ -9,7 +9,7 @@
 #include "Arduino.h"
 
 class RTPTeensyWatchDog{
-	//byte _timeOut;
+	//uint8_t _timeOut;
 	
 	public:
 		RTPTeensyWatchDog();

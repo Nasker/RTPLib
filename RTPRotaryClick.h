@@ -16,7 +16,7 @@ class RTPRotaryClick: public Encoder, public RTPClickButton{
     long int _oldPosition  = -999;
   public:
     RTPRotaryClick();
-    RTPRotaryClick(int leftRotPin, int rightRotPin, int buttonPin, boolean active, boolean pullup):Encoder(leftRotPin,rightRotPin),RTPClickButton(buttonPin,active,pullup){};
+    RTPRotaryClick(int leftRotPin, int rightRotPin, int buttonPin, bool active, bool pullup):Encoder(leftRotPin,rightRotPin),RTPClickButton(buttonPin,active,pullup){};
     void callbackOnRotation( void (*userFunc)(String,int) );
   };
 

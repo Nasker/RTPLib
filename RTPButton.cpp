@@ -8,7 +8,7 @@
 #include "RTPButton.h"
 
 
-RTPButton::RTPButton(byte buttonInput, int mode){
+RTPButton::RTPButton(uint8_t buttonInput, int mode){
   _buttonInput = buttonInput;
   _coundGuardCycles = 500;;
   _countGuard = 0;
@@ -23,7 +23,7 @@ RTPButton::RTPButton(byte buttonInput, int mode){
   }
 }
 
-RTPButton::RTPButton(byte ID, byte buttonInput, int mode){
+RTPButton::RTPButton(uint8_t ID, uint8_t buttonInput, int mode){
   _ID = ID;				
   _buttonInput = buttonInput;
   _coundGuardCycles = 500;;
